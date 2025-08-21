@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ドローン班</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=YuGothic:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="motion.js"></script>
+    <link rel="icon" href="./image/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul class="menu">
+            <a href="../top.html" class="logo">
+                <img src="./image/logo.png" alt="ロゴ">
+            </a>
+            <li>
+                <a href="nav-menu1.html">「活動」を知る</a>
+                <ul class="menu__child">
+                    <li><a href="n-semi.html">通常ゼミ</a></li>
+                    <li><a href="s-semi.html">全体ゼミ</a></li>
+                    <li><a href="schedule.html">1年の流れ</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="nav-menu2.html">「人」を知る</a>
+                <ul class="menu__child">
+                    <li><a href="data.html">ゼミ生データ</a></li>
+                    <li><a href="int_student.html">学生インタビュー</a></li>
+                    <li><a href="int_teacher.html">先生インタビュー</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="nav-menu3.html">「研究」を知る</a>
+                <ul class="menu__child">
+                    <li><a href="droneteam.html">ドローン班</a></li>
+                    <li><a href="progteam.html">プログラミング班</a></li>
+                    <li><a href="individual.html">個人研究</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="passlock.html">ゼミ生専用ページ</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-10 px-4">
+        <header>
+            <div class="container">
+                <div class="p-fv">
+                    <div class="p-fv__img">
+                        <img src="./image/ind.head.jpg" alt="メイン画像" width="1500" height="1000">
+                    </div>
+                    <h1 class="text-center p-fv__copy">個人での研究活動<br>-個人研究編-</h1>
+                </div>
+            </div>
+        </header>
+        <section id="studies" class="text-center scale-up-horizontal-center">
+            <h4 class="text-l md:text-xl font-semibold text-dark-green mt-2">「自分の興味を研究しよう！」</h4>
+            <p class="mt-4 text-sm md:text-base text-dark-gray leading-relaxed">
+                山田ゼミでは研究テーマに制限はありません！<br>
+                個人研究は、学生が興味を持つテーマや専門分野に基づいて研究テーマを選び、独自に研究を行うことができます<br>
+            </p>
+            <div class="learning-cards">
+                <div class="card">
+                    <i class="fas fa-check-square"></i>
+                    <h3>知的好奇心の探求</h3>
+                    <p>自主的な研究を通じて、論理的思考や分析力を育成</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-check-square"></i>
+                    <h3>研究の力が未来を拓く</h3>
+                    <p>研究の過程で得られる知識やスキルは、将来の進路において大きな武器になる</p>
+                </div>
+            </div>
+        </section>
+        <section id="study">
+            <div class="con">
+                <h1>山田ゼミ　論文一覧</h1>
+
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('2021', this)">2021年度</button>
+                    <button class="tab" onclick="showTab('2022', this)">2022年度</button>
+                    <button class="tab" onclick="showTab('2023', this)">2023年度</button>
+                </div>
+
+                <div id="2021" class="schedule-content active">
+                    <!-- 2021年度の論文内容 -->
+                    <div class="event">
+                        <div class="event-text text-center">
+                            <div class="event-title">2021年度　論文</div>
+                            <div class="event-description leading-8">
+                                ・画像認識による感情推測<br>
+                                ・ドローン活用による車中泊避難の実態把握手法の提案<br>
+                                ・グループディスカッションにおける非言語コミュニケーションの重要性<br>
+                                ・非言語コミュニケーションの重要性<br>
+                                ・日本国際郵便追跡ウェブクローラ<br>
+                                ・Pythonを用いた聖地巡礼マップ作成<br>
+                                ・データを活用した認知症患者である祖母との正しい向き合い方<br>
+                                ・ゲームのプレイ有無を⽤いた情報活⽤能⼒の⽐較〜ADK ⽣活総合調査2015 を⽤いて〜<br>
+                                ・海外マーケティング「資⽣堂」<br>
+                                ・アカデミー賞受賞者に見る人種問題～過去から未来～<br>
+                                ・宅配ドローンの配送ルート決定手法の研究~消耗バッテリー量が最小の宅配ルートの求め方~<br>
+                                ・災害時における情報収集及び 共有 システム～電子版ハザードマップの作成と情報の一覧化～<br>
+                                ・Python による勉強時間管理アプリの制作<br>
+                                ・人気家具の比較からみる、無印良品、ニトリ、HOME COOR DY の戦略ポイント<br>
+                                ・宅配ドローンのための配送ルート決定手法の研究～測定実験に基づく距離行列変更を用いて～<br>
+                                ・憧憬 と その 作用について<br>
+
+                                ・大学におけるバーチャルツアーの活用～関西学院大学三田キャンパスのバーチャルツアー制作～<br>
+                                ・単位計算システム 」の 開発卒業必要 単位の計算ミスを防ぐには<br>
+                                ・宅配ドローンの配送経路選定〜外的要因としての「⾵」〜<br>
+                                ・災害時ドローン運用システムードローン情報と<br>
+                                ・コロナ禍から見えた ニーズの変化における各 外食チェーン の対応<br>
+                                ・Twitter 情報を共有するシステム開発Twitter 情報を共有するシステム開発<br>
+                                ・宅配ドローンのための配送ルート決定手法の研究～測定実験に基づく距離行列変更を用いて～<br>
+                                ・「映える」色とは～人気デリスタグラマーの投稿から<br>
+                                ・色と 他人の 印象 の 関係 性～紫でイメージする人物とは<br>
+                                ・面白い話し方～すべらない話の台本構成<br>
+                                ・広告の変化～江戸時代と現代の広告活動と今後の在り方～<br>
+                                ・日本のDX コンサルティングの 現状と 方向性<br>
+                                ・Billboard JAPAN のランキングとビジネスチャンス
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="2022" class="schedule-content">
+                    <!-- 2022年の論文内容 -->
+                    <div class="event">
+                        <div class="event-text text-center">
+                            <div class="event-title">2022年度　論文</div>
+                            <div class="event-description leading-8">
+                                ・自動認識技術を用いた駐車場満空表示システムの開発<br>
+                                ・ドローンを用いた希少植物の調査研究<br>
+                                ・ゼミ室利⽤者管理アプリの作成<br>
+                                ・ドローンを用いた効率的な海岸線のごみ回収方法の提案<br>
+                                ・国民的アニメと家の概念の変化について<br>
+                                ・駄菓子屋における販売促進<br>
+                                ・ファッションデザイン画を用いた3D モデルの表面生成<br>
+                                ・ゲームのプレイ経験を⽤いた生活状況の⽐較〜ADK 生活総合調査 を⽤いて〜<br>
+                                ・未婚女性と 既婚 女性の 消費 意識 の 比較～ADK 生活者総合調査を用いたデータ 分析<br>
+                                ・ドローン利用による 植物調査 の可能性<br>
+                                ・ドローンを用いた希少植物の調査研究<br>
+                                ・Pythonを用いたシフト調節Webアプリケーションの開発
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="2023" class="schedule-content">
+                    <!-- 2023年の論文内容-->
+                    <div class="event">
+                        <div class="event-text text-center">
+                            <div class="event-title">2023年度　論文</div>
+                            <div class="event-description leading-8">
+                                ・アカデミックコモンズ空席検出システムの開発<br>
+                                ・不安感 が恋愛に与える影響～コロナの影響で恋愛観はどう変化したのか<br>
+                                ・メッセージをいかに映像で表現する～メッセージの明らかなCM で検討する～<br>
+                                ・香川県豊島の地蔵管理から考える伝統文化の維持<br>
+                                ・バーチャルメイクとその課題～ユーザーの立場から考える仮想技術～<br>
+                                ・ドローンの空撮画像と画像認識技術を用いた人物の認識精度向上方法の模索<br>
+                                ・画像認識技術を用いた人物の識別精度を向上させる手法の探求<br>
+                                ・ドローンとYOLO NAS を活用した物体検出における認識率向上のための研究<br>
+                                ・美術館に対する人々の関心について<br>
+                                ・日本人が求めるキャラクター分析～サンリオキャラクターの人気調査～<br>
+                                ・プラスチックごみの問題～ラベルレスボトル<br>
+                                ・人工知能を活用したキャッチコピーの生成方法についての研究<br>
+                                ・フードバンクの有効活用～生活困窮者への配布食品の提供<br>
+                                ・解像度は物体認識の精度に何をもたらすか−人工知能による高解像度化の効果−<br>
+
+                                ・深層学習による物体検知技術 YOLOv5 を使用した人を正確に認識することに関する研究<br>
+                                ・アカデミックコモンズ空席検出システムの開発<br>
+                                ・画像自動認識技術による人物の認識精度向上方法の模索<br>
+                                ・マーダーミステリーが論理的思考⼒に与える影響<br>
+                                ・キャッシュレス化の推進における消費者⾏動の変化の分析<br>
+                                ・織物卸売業のためのサンプル帳WEBアプリケーションの提案<br>
+                                ・ワードクラウドを使用し、「香り」を可視化する<br>
+                                ・依存症のリスクとその対策
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Contact Form Section -->
+                <section id="contact" class="container mx-auto mt-10 px-4">
+                    <h2 class="text-3xl font-bold text-green-800 text-center mb-8">お問合せ</h2>
+                    <a href="mailto:info@example.com" class="btn btn-c btn--green btn--cubic"><i
+                            class="fa fas fa-envelope"></i>お問い合わせはこちら
+                    </a>
+                </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-light-gray text-dark-gray text-center p-4 mt-10">
+        <p class="text-sm md:text-base">&copy; 2024 関西学院大学 メディア情報学科・山田孝子ゼミ. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>
