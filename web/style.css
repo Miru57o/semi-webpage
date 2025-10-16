@@ -181,7 +181,8 @@ nav a:hover {
 
 /*n-semiの教科書の部分*/
 .item .image-01 {
-    flex-shrink: 0;/*←これを追加することによってtextの量に依存せずimageの大きさが変わらなくなった*/
+    flex-shrink: 0;
+    /*←これを追加することによってtextの量に依存せずimageの大きさが変わらなくなった*/
     width: 150px;
     /*画像サイズ指定*/
     margin: 0;
@@ -192,7 +193,8 @@ nav a:hover {
 
 
 .item .image-02 {
-    flex-shrink: 0;/*←これを追加することによってtextの量に依存せずimageの大きさが変わらなくなった*/
+    flex-shrink: 0;
+    /*←これを追加することによってtextの量に依存せずimageの大きさが変わらなくなった*/
     max-width: 300px;
     max-height: 300px;
     /*画像サイズ指定*/
@@ -205,7 +207,8 @@ nav a:hover {
 }
 
 .item .image-03 {
-    flex-shrink: 0;/*←これを追加することによってtextの量に依存せずimageの大きさが変わらなくなった*/
+    flex-shrink: 0;
+    /*←これを追加することによってtextの量に依存せずimageの大きさが変わらなくなった*/
     width: 450px;
     height: 450px;
     /*画像サイズ指定*/
@@ -351,7 +354,7 @@ body {
     margin-bottom: 40px;
 }
 
-.chat.student{
+.chat.student {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 40px;
@@ -538,47 +541,49 @@ body {
     margin-right: 30px;
 }
 
-/*サイドボタン(top.html)*/
+/*サイドボタン(top.html) */
 .side-button {
     position: fixed;
-    right: 10px;
-    /* 少し内側に配置 */
-    top: 10%;
-    /* 動画の上面に近い位置に配置 */
-    width: 280px;
-    /* ボタンの横幅を調整 */
-    height: 70px;
-    /* ボタンの縦幅を調整 */
+    right: 0;
+    /* 右端に配置 */
+    top: 50%;
+    /* 上下中央を基準に配置 */
+    transform: translateY(-50%);
+    /* Y軸方向の中央に配置 */
+    width: 70px;
+    /* 横幅を縦幅に */
+    height: 280px;
+    /* 縦幅を横幅に */
     background-color: #78B7D0;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    /* フォントサイズを拡大 */
     font-weight: bold;
     color: rgb(5, 22, 58);
     letter-spacing: 2px;
-    border-radius: 20px;
-    /* ボタンを丸みのある形に */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    /* ボタンを浮かせるような影を追加 */
+    border-radius: 20px 0 0 20px;
+    /* 左側だけ角を丸くする */
+    box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.2);
+    /* 影の方向を調整 */
     z-index: 100;
-    /* 動画より前面に配置 */
     transition: all 0.3s ease;
-    /* ホバー時のアニメーション */
 }
 
 .side-button a {
     text-decoration: none;
     color: rgb(5, 22, 58);
+    /* ここを修正 */
+    writing-mode: vertical-lr;
+    /* テキストを縦書き（左から右へ）にする */
 }
 
 .side-button:hover {
     background-color: #227B94;
-    /* ホバー時の色変更 */
-    transform: scale(1.1);
-    /* ホバー時に少し大きくする */
+    transform: translateY(-50%) scale(1.1);
+    /* ホバー時のアニメーションを調整 */
+    right: 10px;
 }
 
 /* 学生インタビュー(top.html) */
@@ -851,51 +856,84 @@ main {
     font-weight: 900;
 }
 
-/* スケジュール */
-.timeline {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    /* 6 columns per row */
-    gap: 2px;
+/* スケジュール (top.html)*/
+/* モバイル表示 (デフォルト) */
+.timeline-responsive {
+    display: flex;
+    flex-direction: column;
+    /* 全体を縦並びに */
+    gap: 1rem;
+    /* 各月のブロック間に余白 */
 }
 
-.month {
-    padding: 1rem;
-    font-weight: bold;
-    text-align: center;
-    background-color: #f3f4f6;
+.timeline-item {
     border: 1px solid #d1d5db;
-    color: #1f2937;
+    border-radius: 0.5rem;
+    /* 角を少し丸める */
+    overflow: hidden;
+    /* 角丸を適用するため */
+    text-align: center;
 }
 
-.event {
+.timeline-item .month {
+    padding: 0.75rem;
+    font-weight: bold;
+    background-color: #60a5fa;
+    /* ヘッダー色 */
+    color: white;
+}
+
+.timeline-item .event {
     padding: 1rem;
     background-color: #ffffff;
-    border: 1px solid #d1d5db;
-    min-height: 150px;
+    min-height: 80px;
+    /* モバイル用に高さを調整 */
     color: #374151;
-}
-
-.break {
-    background-color: #86efac;
-    color: #ffffff;
-    font-weight: bold;
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Global color uniformity */
-.month-header {
-    background-color: #60a5fa;
-    color: white;
+.timeline-item .event.break {
+    background-color: #86efac;
+    color: #ffffff;
+    font-weight: bold;
 }
 
-.event-header {
-    background-color: #34d399;
-    color: white;
-    font-weight: bold;
+/* PC表示 (min-width: 768px以上) */
+@media (min-width: 768px) {
+    .timeline-responsive {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        /* 6カラムのグリッドレイアウト */
+        gap: 0;
+        /* グリッドの隙間はborderで表現 */
+        border: 1px solid #d1d5db;
+        /* 外枠 */
+    }
+
+    .timeline-item {
+        border-radius: 0;
+        border: none;
+        display: contents;
+        /* グリッドレイアウトを正しく適用するためのキープロパティ */
+    }
+
+    .timeline-item .month,
+    .timeline-item .event {
+        /* 各セルに枠線を設定 */
+        border-right: 1px solid #d1d5db;
+        border-bottom: 1px solid #d1d5db;
+    }
+
+    .timeline-item .month {
+        padding: 1rem;
+    }
+
+    .timeline-item .event {
+        min-height: 150px;
+        /* PC用の高さを再設定 */
+    }
 }
 
 /* コンテンツの幅と中央配置の調整(int_student.html) */
@@ -1018,75 +1056,88 @@ canvas {
 
 /* スマートフォン向けのスタイル */
 @media (max-width: 767px) {
-   .group-section {
+    .group-section {
         padding: 30px 15px;
         max-width: 95%;
     }
-    .flex-container{
-        display:block;
-        margin-left:0;
+
+    .flex-container {
+        display: block;
+        margin-left: 0;
     }
-    .charts{
-        width:100%;
-        margin-left:0;
+
+    .charts {
+        width: 100%;
+        margin-left: 0;
     }
-    .chart-container{
-        width:95%;
-        margin:20px auto;
+
+    .chart-container {
+        width: 95%;
+        margin: 20px auto;
     }
-    .item{
-        flex-direction:column;
+
+    .item {
+        flex-direction: column;
     }
-    .item .image-02{
-        width:100%;
+
+    .item .image-02 {
+        width: 100%;
         max-width: none;
     }
-     .text-gray-700 {
-        padding-left: 0 ;
-        padding-right: 0 ;
+
+    .text-gray-700 {
+        padding-left: 0;
+        padding-right: 0;
     }
+
     .text-2xl {
-        
+
         font-size: 1.5rem;
     }
+
     .px-4 {
-        
+
         padding-left: 1rem;
         padding-right: 1rem;
     }
-     .menu {
+
+    .menu {
         flex-direction: column;
-        width: 100%; 
+        width: 100%;
     }
-     .menu li {
-        width: 100%; 
-        text-align: center; 
+
+    .menu li {
+        width: 100%;
+        text-align: center;
     }
-     .menu__child {
-        position: static; 
+
+    .menu__child {
+        position: static;
         height: auto;
         overflow: visible;
         width: 100%;
     }
-     .logo {
-        margin: 0 auto 20px; 
+
+    .logo {
+        margin: 0 auto 20px;
         display: block;
     }
-     .flex {
-        flex-direction: column; 
-        align-items: flex-start; 
-        width: 100%; 
-        padding: 0 15px; 
-        box-sizing: border-box; 
+
+    .flex {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
 
     .flex .image {
-        width: 100%; 
-        margin-bottom: 20px; 
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     .flex .right {
-        width: 100%; 
+        width: 100%;
         margin: 0;
     }
 }

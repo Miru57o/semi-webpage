@@ -15,28 +15,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
     <link rel="stylesheet" href="./web/style.css">
+    <style>
+        /* 動画セクションのスタイル */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        /* アスペクト比16:9を維持しながら画面を埋める */
+        @media (min-aspect-ratio: 16/9) {
+            .video-container iframe {
+                width: 100vw;
+                height: 56.25vw;
+                /* 16:9 */
+            }
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            .video-container iframe {
+                width: 177.78vh;
+                /* 16:9 */
+                height: 100vh;
+            }
+        }
+    </style>
 </head>
-<div class="side-button">
-    <a href="./archive/index.html">ドローンアーカイブはこちら!!</a>
-</div>
 
 <body>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.js"></script>
     <script src="./web/motion.js"></script>
+
+    <div class="side-button">
+        <a href="./archive/index.html">ドローンアーカイブはこちら!!</a>
+    </div>
+
     <!-- Video Section -->
-    <section class="relative w-screen h-screen">
-        <iframe class="absolute top-0 left-0 w-full h-full object-cover"
-            src="https://www.youtube.com/embed/_FQjFvRV9rw?si=nmU6n7xmuctBm5sH&autoplay=1&mute=1&loop=1&rel=1&controls=0"
+    <section class="video-container">
+        <iframe
+            src="https://www.youtube.com/embed/_FQjFvRV9rw?si=nmU6n7xmuctBm5sH&autoplay=1&mute=1&loop=1&playlist=_FQjFvRV9rw&rel=0&controls=0&showinfo=0&modestbranding=1"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
     </section>
+
     <!-- Navbar -->
     <nav>
         <ul class="menu">
             <a href="top.html" class="logo">
-                <img src="./web/image/logo.png" alt="ロゴ">
+                <img src="./web/image/logo.png" alt="ロゴ" class="h-12 w-auto">
             </a>
             <li>
                 <a href="./web/nav-menu1.html">「活動」を知る</a>
@@ -63,15 +104,15 @@
                 </ul>
             </li>
             <li>
-                <a href="./web/passlock.html">ゼミ生専用ページ</a>
+                <a href="./sennyo/sennyo.html">ゼミ生専用ページ</a>
             </li>
         </ul>
     </nav>
+
     <!-- Main Content -->
     <main class="container mx-auto mt-10 px-4">
-        </section>
         <!-- Introductory Section -->
-        <section id="intro" class="text-center bg-light-gray">
+        <section id="intro" class="text-left bg-light-gray">
             <h2 class="text-2xl md:text-3xl font-bold text-dark-green">
                 関西学院大学・総合政策学部
             </h2>
@@ -88,8 +129,9 @@
                 興味をお持ちの方は、ぜひゼミ活動に参加してみてください。経営と技術の融合を通じて、未来のビジネスシーンで活躍するためのスキルを身につける貴重な機会が待っています。
             </p>
         </section>
+
         <!-- Activity Section -->
-        <section id="activity" class="container mx-auto text-center bg-light-gray">
+        <section id="activity" class="container mx-auto text-left bg-light-gray">
             <h1 class="text-2xl md:text-3xl font-bold text-dark-green">
                 活動紹介
             </h1>
@@ -100,7 +142,6 @@
                 月に一度、全体ゼミで研究発表会を開催し、意見交換やフィードバックを通じて研究をさらに深化させます。
             </p>
         </section>
-
 
         <section class="bg-light-gray">
             <h2 class="text-lg md:text-xl font-bold text-dark-green">新着のお知らせ</h2>
@@ -128,50 +169,45 @@
                 });
         </script>
 
-        <section id="seminars" class="container mx-auto ">
-            <!-- 通常ゼミ -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+        <section id="seminars" class="container mx-auto p-4">
             <div class="bg-light-gray p-8 rounded-lg">
                 <h2 class="text-lg md:text-xl font-bold text-dark-green">通常ゼミ<br><span
                         class="text-sm md:text-base font-normal text-dark-gray">LECTURES</span></h2>
                 <p class="mt-4 text-sm md:text-base text-dark-gray leading-relaxed"></p>
-                <div class="flex items-center h-48 rounded-lg p-4 max-w-4xl">
-                    <!-- 左側に写真を配置 -->
-                    <img src="./web/image/n-feat2.jpg" alt="通常ゼミ" class="h-full rounded-lg mr-4">
-                    <!-- 右側にテキストを配置 -->
+                <div class="flex flex-col md:flex-row items-center rounded-lg p-4 max-w-4xl">
+                    <img src="./web/image/n-feat2.jpg" alt="通常ゼミ"
+                        class="w-full md:w-auto md:h-48 max-w-sm rounded-lg mb-4 md:mb-0 md:mr-4 object-cover">
                     <div class="text-gray-700">
                         <h2 class="text-xl font-bold">4限ゼミ</h2>
                         <p>テキストのレビュー・ディスカッション</p>
-                        <h2 class="text-xl font-bold">5限ゼミ</h2>
+                        <h2 class="text-xl font-bold mt-4">5限ゼミ</h2>
                         <p>Pythonを用いたデータ分析実践演習</p>
                     </div>
                 </div>
-                <button class="cta">
-                    <a href="./web/n-semi.html" target="_blank" rel="noopener noreferrer"><span>Learn More</span></a>
+                <button class="cta mt-2">
+                    <a href="./web/n-semi.html" target="_blank" rel="noopener noreferrer"><span>Learn
+                            More</span></a>
                     <svg width="15px" height="10px" viewBox="0 0 13 10">
                         <path d="M1,5 L11,5"></path>
                         <polyline points="8 1 12 5 8 9"></polyline>
                     </svg>
                 </button>
             </div>
-            <!-- 全体ゼミ -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
-            <div class="bg-light-gray p-8 rounded-lg mt-8"> <!-- 追加の間隔（mt-8）を追加 -->
+            <div class="bg-light-gray p-8 rounded-lg mt-8">
                 <h2 class="text-lg md:text-xl font-bold text-dark-green">全体ゼミ<br><span
                         class="text-sm md:text-base font-normal text-dark-gray">DEMONSTRATION</span></h2>
                 <p class="mt-4 text-sm md:text-base text-dark-gray leading-relaxed"></p>
-                <div class="flex items-center h-48 rounded-lg p-4 max-w-4xl">
-                    <!-- 左側に写真を配置 -->
-                    <img src="./web/image/sch-2.jpg" alt="全体ゼミ" class="h-full rounded-lg mr-4">
-                    <!-- 右側にテキストを配置 -->
+                <div class="flex flex-col md:flex-row items-center rounded-lg p-4 max-w-4xl">
+                    <img src="./web/image/sch-2.jpg" alt="全体ゼミ"
+                        class="w-full md:w-auto md:h-48 max-w-sm rounded-lg mb-4 md:mb-0 md:mr-4 object-cover">
                     <div class="text-gray-700">
-                        <h2 class="text-xl font-bold"></h2>
                         <p>個人研究及びプロジェクトチームの研究の進捗報告</p>
                         <p>相互にフィードバックを行い、課題点などを模索していきます</p>
                     </div>
                 </div>
-                <button class="cta">
-                    <a href="./web/s-semi.html" target="_blank" rel="noopener noreferrer"><span>Learn More</span></a>
+                <button class="cta mt-2">
+                    <a href="./web/s-semi.html" target="_blank" rel="noopener noreferrer"><span>Learn
+                            More</span></a>
                     <svg width="15px" height="10px" viewBox="0 0 13 10">
                         <path d="M1,5 L11,5"></path>
                         <polyline points="8 1 12 5 8 9"></polyline>
@@ -179,7 +215,8 @@
                 </button>
             </div>
         </section>
-        <section id="studies" class="container mx-auto text-center bg-light-gray">
+
+        <section id="studies" class="container mx-auto p-4 text-left bg-light-gray">
             <h2 class="text-2xl md:text-3xl font-bold text-dark-green">グループでの研究活動</h2>
             <h3 class="text-xl md:text-2xl font-semibold text-dark-green mt-2">ドローン班・プログラミング班</h3>
             <p class="mt-4 text-sm md:text-base text-dark-gray leading-relaxed">
@@ -187,18 +224,15 @@
                 主な活動班であるドローン班とプログラミング班を紹介していきます<br>
                 内容は毎年異なりますが、今年の例を紹介しています<br>
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
-            <div class="bg-light-gray p-8 rounded-lg">
-            </div>
-            <!-- ドローン班のブロック -->
-            <div class="flex flex-col md:flex-row items-center rounded-lg p-4 max-w-4xl mx-auto mt-8 bg-white shadow-md">
-                <!-- 左側に写真を配置 -->
-                <img src="./web/image/droneent6.jpg" alt="ドローン班" class="h-full rounded-lg mr-4">
-                <!-- 右側にテキストを配置 -->
+
+            <div
+                class="flex flex-col md:flex-row items-center rounded-lg p-4 max-w-4xl mx-auto mt-8 bg-white shadow-md">
+                <img src="./web/image/droneent6.jpg" alt="ドローン班"
+                    class="w-full md:w-auto md:h-48 max-w-sm rounded-lg mb-4 md:mb-0 md:mr-4 object-cover">
                 <div class="text-gray-700">
                     <h2 id="droneteam" class="text-xl font-bold text-left">ドローン班</h2>
                     <p>
-                        「最先端技術で社会課題の分析から解決へ！」
+                        「最先端技術で社会課題の分析から解決へ!」
                     </p>
                     <button class="cta mt-2">
                         <a href="./web/droneteam.html" target="_blank" rel="noopener noreferrer"><span>Learn
@@ -210,15 +244,15 @@
                     </button>
                 </div>
             </div>
-            <!-- プログラミング班のブロック -->
-            <div class="flex flex-col md:flex-row items-center rounded-lg p-4 max-w-4xl mx-auto mt-8 bg-white shadow-md">
-                <!-- 左側に写真を配置 -->
-                <img src="./web/image/progteam.png" alt="プログラミング班" class="h-full rounded-lg mr-4">
-                <!-- 右側にテキストを配置 -->
+
+            <div
+                class="flex flex-col md:flex-row items-center rounded-lg p-4 max-w-4xl mx-auto mt-8 bg-white shadow-md">
+                <img src="./web/image/progteam.png" alt="プログラミング班"
+                    class="w-full md:w-auto md:h-48 max-w-sm rounded-lg mb-4 md:mb-0 md:mr-4 object-cover">
                 <div class="text-gray-700">
                     <h2 id="progteam" class="text-xl font-bold text-left">プログラミング班</h2>
                     <p>
-                        「未来のテクノロジーに対応できる力を育む！」
+                        「未来のテクノロジーに対応できる力を育む!」
                     </p>
                     <button class="cta mt-2">
                         <a href="./web/progteam.html" target="_blank" rel="noopener noreferrer"><span>Learn
@@ -230,15 +264,15 @@
                     </button>
                 </div>
             </div>
-            <!-- 個人研究のブロック -->
-            <div class="flex flex-col md:flex-row items-center rounded-lg p-4 max-w-4xl mx-auto mt-8 bg-white shadow-md">
-                <!-- 左側に写真を配置 -->
-                <img src="https://via.placeholder.com/150" alt="個人研究" class="h-full rounded-lg mr-4">
-                <!-- 右側にテキストを配置 -->
+
+            <div
+                class="flex flex-col md:flex-row items-center rounded-lg p-4 max-w-4xl mx-auto mt-8 bg-white shadow-md">
+                <img src="./web/image/ind_head.jpg" alt="個人研究"
+                    class="w-full md:w-auto md:h-48 max-w-sm rounded-lg mb-4 md:mb-0 md:mr-4 object-cover">
                 <div class="text-gray-700">
                     <h2 id="individual" class="text-xl font-bold text-left">個人研究</h2>
                     <p>
-                        「自分の興味を研究しよう！」
+                        「自分の興味を研究しよう!」
                     </p>
                     <button class="cta mt-2">
                         <a href="./web/individual.html" target="_blank" rel="noopener noreferrer"><span>Learn
@@ -251,9 +285,10 @@
                 </div>
             </div>
         </section>
+
         <!-- Student Testimonials Section -->
         <section id="interview" class="container mx-auto bg-light-gray text-dark-green">
-            <div class="container mx-auto text-center">
+            <div class="container mx-auto text-left">
                 <h2 class="text-3xl md:text-4xl font-bold">所属学生の声</h2>
                 <p class="mt-2 text-sm md:text-base">学生生活 / 研究内容 / 進路状況 / その他</p>
             </div>
@@ -263,103 +298,131 @@
                     <h3 class="text-lg md:text-xl font-semibold mt-4">
                         <a href="./web/int_student.html#student1">学部4年 ゼミ長</a>
                     </h3>
-                    <p class="mt-2 text-sm md:text-base leading-relaxed">「合同ゼミが魅力的！包括的な知識や経験を身につけられました」</p>
+                    <p class="mt-2 text-sm md:text-base leading-relaxed">「合同ゼミが魅力的!包括的な知識や経験を身につけられました」</p>
                 </div>
                 <!-- Student 2 -->
                 <div class="speech-bubble bg-dark-green p-6 rounded-lg text-white relative animation">
                     <h3 class="text-lg md:text-xl font-semibold mt-4">
                         <a href="./web/int_student.html#student2">学部3年 おにぎり🍙</a>
                     </h3>
-                    <p class="mt-2 text-sm md:text-base leading-relaxed">「”面白そう”だとおもったら一歩踏み出すチャンスです！」</p>
+                    <p class="mt-2 text-sm md:text-base leading-relaxed">「"面白そう"だとおもったら一歩踏み出すチャンスです!」</p>
                 </div>
                 <!-- Student 3 -->
                 <div class="speech-bubble bg-dark-green p-6 rounded-lg text-white relative animation">
                     <h3 class="text-lg md:text-xl font-semibold mt-4">
                         <a href="./web/int_student.html#student3">学部4年</a>
                     </h3>
-                    <p class="mt-2 text-sm md:text-base leading-relaxed">「知識ゼロからでも始められるところがイチオシポイントです！」</p>
+                    <p class="mt-2 text-sm md:text-base leading-relaxed">「知識ゼロからでも始められるところがイチオシポイントです!」</p>
                 </div>
                 <!-- Student 4 -->
                 <div class="speech-bubble bg-dark-green p-6 rounded-lg text-white relative animation">
                     <h3 class="text-lg md:text-xl font-semibold mt-4">
                         <a href="./web/int_student.html#student4">学部3年 A子🌷</a>
                     </h3>
-                    <p class="mt-2 text-sm md:text-base leading-relaxed">「高い壁に挑戦しているとき、成長を感じます！」</p>
+                    <p class="mt-2 text-sm md:text-base leading-relaxed">「高い壁に挑戦しているとき、成長を感じます!」</p>
                 </div>
             </div>
         </section>
-        <section id="intro" class="container mx-auto text-center bg-light-gray">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+
+        <section id="schedule" class="container mx-auto text-center bg-light-gray py-12 px-4">
             <div class="max-w-7xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-                <h1 class="text-3xl font-bold text-center mb-8 text-gray-700">年間スケジュール</h1>
-                <h2 class="text-l font-bold text-right mb-8 text-gray-700"><a href="./web/schedule.html">詳しく見る</a></h2>
-                <!-- Timeline Grid -->
-                 <!--後藤　表の調整-->
-            <div class="overflow-x-auto">  
-                <div class="timeline min-w-[720px]">
-                    <!-- First Row (April to September) -->
-                    <div class="month month-header">4月</div>
-                    <div class="month month-header">5月</div>
-                    <div class="month month-header">6月</div>
-                    <div class="month month-header">7月</div>
-                    <div class="month month-header">8月</div>
-                    <div class="month month-header">9月</div>
-                    <div class="event">
-                        <p class="font-bold">• ゼミ生歓迎会</p>
+                <h1 class="text-3xl font-bold text-center mb-2 text-gray-700">年間スケジュール</h1>
+                <div class="text-right mb-8">
+                    <a href="./web/schedule.html" class="text-blue-500 hover:underline">詳しく見る</a>
+                </div>
+
+                <!-- Responsive Timeline -->
+                <div class="timeline-responsive">
+                    <!-- 4月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">4月</div>
+                        <div class="event">
+                            <p class="font-bold">• ゼミ生歓迎会</p>
+                        </div>
                     </div>
-                    <div class="event">
-                        <p class="font-bold">• 研究テーマの決定<br>
-                            <a href="">これまでの研究例</a>
-                        </p>
+                    <!-- 5月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">5月</div>
+                        <div class="event">
+                            <p class="font-bold">• 研究テーマの決定<br><a href="#"
+                                    class="text-blue-500 hover:underline">これまでの研究例</a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="event">
+                    <!-- 6月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">6月</div>
+                        <div class="event"></div>
                     </div>
-                    <div class="event">
-                        <p></p>
+                    <!-- 7月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">7月</div>
+                        <div class="event"></div>
                     </div>
-                    <div class="event break">
-                        夏休み<br>（研究の深堀り）
+                    <!-- 8月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">8月</div>
+                        <div class="event break">夏休み<br>(研究の深堀り)</div>
                     </div>
-                    <div class="event break">
-                        夏休み<br>（中間報告の準備）
+                    <!-- 9月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">9月</div>
+                        <div class="event break">夏休み<br>(中間報告の準備)</div>
                     </div>
-                    <!-- Second Row (October to March) -->
-                    <div class="month month-header">10月</div>
-                    <div class="month month-header">11月</div>
-                    <div class="month month-header">12月</div>
-                    <div class="month month-header">1月</div>
-                    <div class="month month-header">2月</div>
-                    <div class="month month-header">3月</div>
-                    <div class="event">
-                        <p class="font-bold">• ゼミ研修<br>
-                            <a href="">ゼミ研修の様子</a>
-                        </p>
+                    <!-- 10月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">10月</div>
+                        <div class="event">
+                            <p class="font-bold">• ゼミ研修<br><a href="#" class="text-blue-500 hover:underline">ゼミ研修の様子</a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="event">
-                        <p class="font-bold">• 論文執筆</p>
+                    <!-- 11月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">11月</div>
+                        <div class="event">
+                            <p class="font-bold">• 論文執筆</p>
+                        </div>
                     </div>
-                    <div class="event">
-                        <p class="font-bold">• 卒業論文提出</p>
+                    <!-- 12月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">12月</div>
+                        <div class="event">
+                            <p class="font-bold">• 卒業論文提出</p>
+                        </div>
                     </div>
-                    <div class="event">
+                    <!-- 1月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">1月</div>
+                        <div class="event">
+                            <p class="font-bold">• 進級論文提出</p>
+                        </div>
                     </div>
-                    <div class="event">
-                        <p class="font-bold">• 進級論文提出</p>
+                    <!-- 2月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">2月</div>
+                        <div class="event">
+                            <p class="font-bold"></p>
+                        </div>
                     </div>
-                    <div class="event break">
-                        春休み
+                    <!-- 3月 -->
+                    <div class="timeline-item">
+                        <div class="month month-header">3月</div>
+                        <div class="event break">春休み</div>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Contact Form Section -->
         <section id="contact" class="container mx-auto mt-10 px-4">
             <h2 class="text-3xl font-bold text-green-800 text-center mb-8">お問合せ</h2>
-            <a href="mailto:info@example.com" class="btn btn-c btn--green btn--cubic"><i
+            <a href="mailto:sps.ymdsemi2024@gmail.com" class="btn btn-c btn--green btn--cubic"><i
                     class="fa fas fa-envelope"></i>お問い合わせはこちら
             </a>
         </section>
     </main>
+
     <!-- Footer -->
     <footer class="container mx-auto bg-light-gray text-dark-gray text-center p-4 mt-10">
         <p class="text-sm md:text-base">&copy; 2024 関西学院大学 メディア情報学科・山田孝子ゼミ. All rights reserved.

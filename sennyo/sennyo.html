@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゼミ生専用ページ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-green': '#2F5233',
+                        'light-green': '#8FBC8F',
+                        'dark-gray': '#4A4A4A',
+                        'light-gray': '#F5F5F5'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=YuGothic:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../web//image/logo.ico.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../web/style.css">
+    <div class="side-button">
+        <a href="https://line.me/R/ti/p/@911ecchj">山田ゼミ公式LINEはこちら!!</a>
+    </div>
+    <style>
+        /*サイドボタン(top.html) */
+        .side-button {
+            position: fixed;
+            right: 0;
+            /* 右端に配置 */
+            top: 50%;
+            /* 上下中央を基準に配置 */
+            transform: translateY(-50%);
+            /* Y軸方向の中央に配置 */
+            width: 70px;
+            /* 横幅を縦幅に */
+            height: 280px;
+            /* 縦幅を横幅に */
+            background-color: #78B7D0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(5, 22, 58);
+            letter-spacing: 2px;
+            border-radius: 20px 0 0 20px;
+            /* 左側だけ角を丸くする */
+            box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.2);
+            /* 影の方向を調整 */
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .side-button a {
+            text-decoration: none;
+            color: rgb(5, 22, 58);
+            /* ここを修正 */
+            writing-mode: vertical-lr;
+            /* テキストを縦書き（左から右へ）にする */
+        }
+
+        .side-button:hover {
+            background-color: #227B94;
+            transform: translateY(-50%) scale(1.1);
+            /* ホバー時のアニメーションを調整 */
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-light-gray">
+    <!-- Navbar -->
+    <nav>
+        <ul class="menu">
+            <a href="top.html" class="logo">
+                <img src="../web/image/logo.png" alt="ロゴ" class="h-12 w-auto">
+            </a>
+            <li>
+                <a href="../web/nav-menu1.html">「活動」を知る</a>
+                <ul class="menu__child">
+                    <li><a href="../web/n-semi.html">通常ゼミ</a></li>
+                    <li><a href="../web/s-semi.html">全体ゼミ</a></li>
+                    <li><a href="../web/schedule.html">1年の流れ</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../web/nav-menu2.html">「人」を知る</a>
+                <ul class="menu__child">
+                    <li><a href="../web/data.html">ゼミ生データ</a></li>
+                    <li><a href="../web/int_student.html">学生インタビュー</a></li>
+                    <li><a href="../web/int_teacher.html">先生インタビュー</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../web/nav-menu3.html">「研究」を知る</a>
+                <ul class="menu__child">
+                    <li><a href="../web/droneteam.html">ドローン班</a></li>
+                    <li><a href="../web/progteam.html">プログラミング班</a></li>
+                    <li><a href="../web/individual.html">個人研究</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="sennyo.html">ゼミ生専用ページ</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container mx-auto mt-10 px-4">
+        <!-- ヘッダーセクション -->
+        <section class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-dark-green mb-4">就活アンケート結果</h1>
+            <p class="text-base md:text-lg text-dark-gray leading-relaxed">
+                三年生の就活が本格化していく中で、出てくる疑問…<br>
+                その疑問を山田ゼミ四年生にぶつけてみました！
+            </p>
+        </section>
+
+        <!-- 就活アンケート画像セクション -->
+        <section class="mb-10">
+            <!-- 画像1 -->
+            <div class="mb-6">
+                <img src="../web/image/jobhunt1.png" alt="就活アンケート結果 前編" class="w-full h-auto rounded-lg shadow-md"
+                    loading="lazy">
+            </div>
+
+            <!-- 画像2 -->
+            <div class="mb-6">
+                <img src="../web/image/jobhunt2.png" alt="就活アンケート結果 後編" class="w-full h-auto rounded-lg shadow-md"
+                    loading="lazy">
+            </div>
+
+            <!-- 補足メッセージ -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md text-center border-t-4 border-dark-green">
+                <p class="text-lg md:text-xl font-bold text-dark-green mb-3">
+                    その他、気になる質問は気軽に先輩にぶつけてください!
+                </p>
+                <p class="text-base md:text-lg text-dark-gray leading-relaxed">
+                    就活はとても大変だと思いますが、がんばってください!!
+                </p>
+                <div class="mt-4">
+                    <i class="fas fa-heart text-2xl text-light-green"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light-gray text-dark-gray text-center p-4 md:p-6 mt-10 border-t border-gray-300">
+        <p class="text-xs md:text-sm lg:text-base">
+            &copy; 2025 関西学院大学 メディア情報学科・山田孝子ゼミ. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>
